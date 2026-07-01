@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Aula 4 - HTML e CSS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="img/logo.png"/>
+        
+        <style>
+            main
+            {
+              border: 3px solid #845743;
+              text-align: center;
+              justify-self: center;
+              padding: 30px 20px;
+              background-color: #b4d9d9;
+              box-shadow: 1px 2px 2px 2px black;
+              border-radius: 20px;
+              position: fixed;
+              top:50%;
+              transform: translateY(-50%);
+            }
+            #user{
+                background-color: #aefbff;
+                font-size: 12pt;
+                font-family: cursive;
+                color: #d23e87;
+                border: 3px solid #67e3c4;
+                border-radius: 8px;
+            }
+            #pass{
+                background-color: #aefbff;
+                font-size: 12pt;
+                font-family: cursive;
+                color: #d23e87;
+                border: 3px solid #67e3c4;
+                border-radius: 8px;
+            }
+            label{
+                display: block;
+                text-align: left;
+                margin: 5px 0px;
+                font-size: 12pt;
+                font-family: cursive;
+                color: #00b7ff;
+            }
+            #btn{
+                width: 150px;
+                 margin: 10px 0px;
+                background-color: #00ffd9;
+                font-size: 22pt;
+                font-weight: bold;
+                font-family: cursive;
+                color: #d23e87;
+                border: 3px solid #00b7ff;
+                border-radius: 8px;
+            }
+            #btn:hover{
+                transition: 0.5s;
+                height: 40px;
+                 width: 200px;
+                 margin: 10px 0px;
+                background-color: #d23e87;
+                font-size: 22pt;
+                font-weight: bold;
+                font-family: cursive;
+                color: #00ffd9;
+                border: 3px solid #00b7ff;
+                border-radius: 8px;
+            }
+            #user:focus{
+                 background-color: #00ffd9;
+                font-size: 12pt;
+                font-weight: bold;
+                font-family: cursive;
+                color: #d23e87;
+                border: 3px solid #67e3c4;
+                border-radius: 8px;
+            }
+            #pass:focus{
+                background-color: #00ffee;
+                font-size: 12pt;
+                font-weight: bold;
+                font-family: cursive;
+                color: #d23e87;
+                border: 3px solid #67e3c4;
+                border-radius: 8px;
+            }
+           
+        </style>
+    </head>
+    <body>
+        <main>
+            <img src="img/logo.png" alt="logo do site" width="200"/>
+            <form action="#" method="get">
+                <div>
+                    <label for="user">Usuario:</label>
+                    <input type="text" id="user" name="user" placeholder="insira seu nome" minlength="4" maxlength="20">
+                </div>
+                <div>
+                    <label for="pass">senha:</label>
+                    <input type="password" id="pass" name="pass" placeholder="insira sua senha" minlength="4" maxlength="20">
+                </div>
+                
+                <input type="submit" value="Entrar" id="btn" style="font-size: 14pt;">
+                
+                
+            </form>
+        </main>
+    </body>
+</html>
