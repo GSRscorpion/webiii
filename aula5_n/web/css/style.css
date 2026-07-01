@@ -1,0 +1,157 @@
+nav
+{
+    background-color: #fe820a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 65px;
+    border: #43f9fc solid;
+}
+
+body
+{
+    color: #fe820a;
+    background-color: #ccffff
+}
+
+#logo
+{
+    width: 70px
+}
+
+#menu
+{
+    width: 70px;
+}
+
+main
+{
+    display: flex;
+    justify-content: center
+}
+
+label,h2
+{
+    font-family: fantasy;
+    text-shadow:
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black;
+    
+}
+
+div
+{
+    text-align: center;
+    display: block;
+    padding: 19px;
+}
+
+input
+{
+    margin-top: 5px;
+    border: #66ccff solid;
+    border-radius: 8px;
+    background-color: #ccffff;
+    color: #fe820a;
+    font-family: cursive
+}
+
+input::placeholder
+{
+    color: #fe820a;
+}
+
+input:focus
+{
+    outline: none;
+      
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+
+  width: 20px;
+  height: 20px;
+  border: 2px solid #43f9fc;
+  border-radius: 4px;
+  display: block;
+  text-align: center;
+  line-height: 16px;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #fe820a;
+}
+
+input[type="checkbox"]:checked::before {
+  content: "✓";
+  color: #43f9fc;
+  display: block;
+  text-align: center;
+  line-height: 16px;
+}
+
+#aviso
+{
+    font-size: 20px;
+    display: block;
+    text-align: left;  
+}
+
+#btn-cadastrar:hover
+{
+    background-color: #43f9fc;
+    border: #fe820a solid;
+    color: #fe820a;
+    text-shadow:
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black;
+}
+
+    
+    
+
+
+#btn-cadastrar
+{
+    margin-top: 5px;
+    border: #43f9fc solid;
+    border-radius: 8px;
+    background-color: #fe820a;
+    color: #43f9fc;
+    font-family: fantasy;
+    font-size: larger;
+    width: 180px;
+    height: 50px;
+    cursor: pointer;
+    text-shadow:
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black;
+}
+
+
+form
+{
+    align-content: center;
+    border: #fe820a solid 5px;
+    border-radius: 20px;
+    width: 260px;
+    height: 830px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #b6d3f6
+}
+
+
+footer
+{
+    text-align: center;
+}

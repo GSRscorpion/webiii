@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cadastro</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css"/>
+        <link rel="icon" href="img/logo.png"/>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="js/jquery.mask.js"></script>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="logo">
+                    <a href="index.html">
+                <img src="img/logo.png" id="logo" alt="logotipo"/>    
+                    </a>
+                </div>
+                
+                <div class="menu">
+                    <a href="index.html">
+                    <img src="img/menu.png" alt="menu do site" id="menu"/>                      
+                    </a>
+                </div>
+            </nav>
+           
+        </header>
+        
+        <main>
+            <div>
+                <h2>CADASTRO</h2>
+                <form action="CadastroController" method="post">
+                    <div>
+                    <label for="nome">Nome</label>
+                    <input type="text" name="nome" required placeholder="Digite seu nome" id="nome" minlength="4" maxlength="25">
+                    </div>
+                    
+                    <div>
+                    <label for="cpf">CPF</label>
+                    <input type="tel" pattern="[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}" name="cpf" id="cpf" required placeholder="000.000.000-00">
+                    </div>
+                    
+                    <div>
+                    <label for="telefone">Telefone</label>
+                    <input type="tel" pattern="[1-9]{2}-[0-9]{5}-[0-9]{4}" name="telefone" id="telefone" required placeholder="00-90000-0000">
+                    </div>
+                    
+                    <div>
+                    <label for="email">Email</label>
+                    <input type="text" name="email" required placeholder="SeuNome@Exemplo.com" id="email" minlength="4" maxlength="25">
+                    </div>
+                    
+                    <div>
+                    <label for="date">Data de nascimento</label>
+                    <input type="date" name="data-nasc" id="data-nasc" required >
+                    </div>
+                        
+                    
+                    <div>
+                    <label for="senha">Senha</label>
+                    <input type="password" name="senha" id="senha" required placeholder="Digite sua senha" minlength="8" maxlength="12">
+                    </div>
+                    
+                    <div>
+                        <label for="confirm">Confirme a Senha</label>
+                    <input type="password" name="confirm" required placeholder="Confirme sua senha" minlength="8" maxlength="12">
+                    </div>
+                    
+                    <div>
+                        <label for="avisos" id="aviso">Deseja receber nossos Avisos</label>
+                        <input type="checkbox" name="avisos" id="avisos">
+                    </div>
+                    
+                    <input type="submit" id="btn-cadastrar" value="Cadastrar">
+                    
+                </form>
+            </div>
+        </main>
+        
+        <footer>
+            <hr>
+            <small>
+                2026 - Nenhum direito reservado &copy;
+            </small>
+        </footer>
+        
+        <script>
+            $(document).ready(function () {
+                $('#cpf').mask('000.000.000-00');
+                $('#telefone').mask('00-00000-0000');
+            });
+        </script>
+        <script>
+        $(document).ready(function () {
+            $('#cpf').mask('000.000.000-00');
+            $('#telefone').mask('00-00000-0000');
+        });
+        </script>
+    </body>
+</html>
