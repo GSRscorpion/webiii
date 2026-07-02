@@ -1,0 +1,158 @@
+/* Fonte */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Nunito',sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,#f5ebdc,#f8d7a3);
+    min-height:100vh;
+    padding:40px;
+    color:#502314;
+}
+
+a{
+    text-align: center;
+    display:block;
+    width:100%;
+    margin-top:25px;
+    padding:16px;
+    border:none;
+    border-radius:50px;
+    background:#d62300;
+    color:white;
+    font-size:50px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+    box-shadow:0 8px 18px rgba(214,35,0,.35);
+    text-decoration: none;
+    
+}
+
+/* Caixa principal */
+form{
+    max-width:700px;
+    margin:25px auto;
+    background:#fffaf4;
+    padding:30px 40px;
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,.18);
+    border:4px solid #d62300;
+}
+
+/* Títulos */
+h1{
+    text-align:center;
+    color:#d62300;
+    font-size:42px;
+    font-weight:800;
+    margin-bottom:10px;
+}
+
+h2{
+    text-align:center;
+    color:#502314;
+    margin-bottom:25px;
+    font-size:22px;
+}
+
+h3{
+    color:#d62300;
+    margin:20px 0 15px;
+    font-size:24px;
+    border-left:8px solid #ff8732;
+    padding-left:12px;
+}
+
+/* Separadores */
+hr{
+    border:none;
+    border-top:2px dashed #ff8732;
+    margin:25px 0;
+}
+
+/* Inputs */
+input[type="radio"],
+input[type="checkbox"]{
+    accent-color:#d62300;
+    transform:scale(1.2);
+    margin-right:10px;
+    cursor:pointer;
+}
+
+/* Labels */
+label{
+    display:inline-block;
+    margin:8px 0;
+    font-size:18px;
+    cursor:pointer;
+    transition:.25s;
+    padding:6px 10px;
+    border-radius:10px;
+}
+
+label:hover{
+    background:#ffe2c2;
+    color:#d62300;
+    transform:translateX(5px);
+}
+
+/* Botão */
+input[type="submit"]{
+    display:block;
+    width:100%;
+    margin-top:25px;
+    padding:16px;
+    border:none;
+    border-radius:50px;
+    background:#d62300;
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+    box-shadow:0 8px 18px rgba(214,35,0,.35);
+}
+
+input[type="submit"]:hover{
+    background:#ff8732;
+    transform:translateY(-3px);
+    box-shadow:0 12px 24px rgba(0,0,0,.25);
+}
+
+input[type="submit"]:active{
+    transform:scale(.98);
+}
+
+/* Responsividade */
+@media(max-width:768px){
+
+    body{
+        padding:15px;
+    }
+
+    form{
+        padding:20px;
+    }
+
+    h1{
+        font-size:32px;
+    }
+
+    h2{
+        font-size:18px;
+    }
+
+    h3{
+        font-size:20px;
+    }
+
+    label{
+        font-size:17px;
+    }
+}
