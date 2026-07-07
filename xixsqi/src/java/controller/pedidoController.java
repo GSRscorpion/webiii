@@ -28,9 +28,22 @@ public class pedidoController extends HttpServlet {
         
         pedido ped = new pedido(sabor, acomp, bebida, entrega);
         
+        //Chamada da função ra calcular o pedido
+        
+        ped.calcularPedido();
+        
         //Teste
         
         System.out.println(ped);
+        
+        //Criando atributo para encaminhar
+        //a tela de finalização do pedido
+        
+        request.setAttribute("pedido", ped);
+        
+        //Encaminhamento desse atributo á outra pagina
+        
+        request.getRequestDispatcher("finaliza-pedido.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

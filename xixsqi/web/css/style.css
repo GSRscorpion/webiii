@@ -35,7 +35,7 @@ a{
 }
 
 /* Caixa principal */
-form{
+form,li{
     max-width:700px;
     margin:25px auto;
     background:#fffaf4;
