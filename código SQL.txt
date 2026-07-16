@@ -1,0 +1,44 @@
+código SQL
+
+
+CREATE TABLE pedidos 
+( 
+ id_pedido INT PRIMARY KEY AUTO_INCREMENT,  
+ id_cliente INT,  
+ entrega_pedido ENUM("Delivery", "Retirada") NOT NULL,  
+ data_pedido DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,  
+ valor_pedido FLOAT NOT NULL,  
+ pgto_pedido ENUM("Dinheiro", "Cartão", "PIX") NOT NULL  
+); 
+
+CREATE TABLE clientes 
+( 
+ id_cliente INT PRIMARY KEY AUTO_INCREMENT,  
+ nome_cliente VARCHAR(50) NOT NULL,  
+ telefone_cliente VARCHAR(15) NOT NULL UNIQUE,  
+ numero INT NOT NULL,  
+ logradouro VARCHAR(50) NOT NULL,  
+ bairro VARCHAR(30) NOT NULL  
+); 
+
+CREATE TABLE produtos 
+( 
+ id_produto INT PRIMARY KEY AUTO_INCREMENT,  
+ desc_produto TEXT,  
+ nome_produto VARCHAR(30) NOT NULL,  
+ valor_produto FLOAT NOT NULL  
+); 
+
+CREATE TABLE items_pedido 
+( 
+ id_items_pedido INT PRIMARY KEY AUTO_INCREMENT,  
+ id_produto INT,  
+ id_pedido INT,  
+ quantidade INT NOT NULL,  
+ subtotal FLOAT NOT NULL,  
+ obs TEXT 
+); 
+
+ALTER TABLE pedidos ADD FOREIGN KEY(id_cliente) REFERENCES clientes (id_cliente);
+ALTER TABLE items_pedido ADD FOREIGN KEY(id_produto) REFERENCES produtos (id_produto);
+ALTER TABLE items_pedido ADD FOREIGN KEY(id_pedido) REFERENCES pedidos (id_pedido);
