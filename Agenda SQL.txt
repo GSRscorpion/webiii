@@ -1,0 +1,20 @@
+Agenda SQL
+
+CREATE TABLE usuarios 
+( 
+ id_usuario INT PRIMARY KEY AUTO_INCREMENT,  
+ nome_usuario VARCHAR(40) NOT NULL,  
+ telefone_usuario VARCHAR(15) NOT NULL,  
+ senha_usuario TEXT NOT NULL,  
+ UNIQUE (nome_usuario,telefone_usuario)
+); 
+
+CREATE TABLE agendamentos 
+( 
+ id_agendamento INT PRIMARY KEY AUTO_INCREMENT,  
+ id_usuario INT,  
+ desc_agendamento TEXT NOT NULL,  
+ data_agendamento DATETIME NOT NULL 
+); 
+
+ALTER TABLE agendamentos ADD FOREIGN KEY(id_usuario) REFERENCES usuarios (id_usuario)
