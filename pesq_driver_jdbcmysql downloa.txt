@@ -1,0 +1,7 @@
+pesquisar driver jdbc mysql download
+
+https://dev.mysql.com/downloads/connector/j/
+
+baixar platform independent
+
+add jar/folder no libraries
