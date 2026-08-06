@@ -17,18 +17,18 @@ if( session.getAttribute("userLogged") == null ){
         <title>Editar</title>
     </head>
     <body>
-        <h1>Editar dados</h1>
+        <h1>Editar usuário</h1>
         <form action="UsuarioController" method="post" onsubmit="return confirm('Confirma a alteração dos dados?')">
-            <input type="hidden" name="flag" value="salvar">
+            <input type="hidden" name="flag" value="editar">
             <input type="hidden" name="id" value="<%= u.getIdUsuario() %>">
             
-            <input type="text" name="usuario" id="usuario" value="<%= u.getNomeUsuario() %>" readonly>
+            <input type="text" name="usuario" id="usuario" value="<%= u.getNomeUsuario() %>" readonly >
             <br><br>
             <input type="text" name="telefone" id="telefone" placeholder="Nº de telefone" value="<%= u.getTelefoneUsuario() %>" required >
             <br><br>
             
             <div>
-                <input type="password" name="senha" id="senha" placeholder="Mova senha" required >
+                <input type="password" name="senha" id="senha" placeholder="Nova senha" required >
                 <button id="btn-senha" type="button">Mostrar</button>
             </div>
             
@@ -43,7 +43,7 @@ if( session.getAttribute("userLogged") == null ){
             <input type="submit" value="Editar">
             <br><br>
             
-            <a href="UsuarioController?flag=excluir&id=<%= u.getIdUsuario() %>" > Excluir conta </a>
+            <a href="#" onclick="excluir()">Excluir conta</a>
         </form>
         
         <script>
@@ -73,6 +73,12 @@ if( session.getAttribute("userLogged") == null ){
                     btnSenhaConf.innerHTML = "Esconder";
                 }
             });
+            
+            function excluir() {
+                if( confirm("Deseja excluir sua conta? Esta operação é irreversível!") ){
+                    window.location.href="UsuarioController?flag=excluir&id=<%= u.getIdUsuario() %>"
+                }
+            }
         </script>
         
     </body>

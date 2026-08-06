@@ -6,49 +6,51 @@ import model.Usuario;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import model.Agendamento;
 
-public class UsuarioDAO {
+public class AgendamentoDAO {
     private Connection conn;
     
-    public UsuarioDAO() throws SQLException, ClassNotFoundException{
+    public AgendamentoDAO() throws SQLException, ClassNotFoundException{
         conn = Conexao.getConn();
     }
     
-    public void novoUsuario(Usuario u) throws SQLException{
+    public void novoAgendamento(Agendamento a) throws SQLException{
         String query = "INSERT INTO " +
-        "usuarios(nome_usuario, telefone_usuario, senha_usuario) " +
+        "agendamentos(id_usuario, data_agendamento, desc_agendamento) " +
         "VALUES(?, ?, ?);";
         
         PreparedStatement p = conn.prepareStatement(query);
         
-        p.setString(1, u.getNomeUsuario());
-        p.setString(2, u.getTelefoneUsuario());
-        p.setString(3, u.getSenhaUsuario());
+        p.setInt(1, a.getUsuario().getIdUsuario());
+        p.setDate(2, new java.sql.Date( a.getDataAgendamento().getTime() ) );
+        p.setString(3, a.getDescAgendamento());
         
         p.execute();
         conn.close();
     }
     
-    public Usuario selecionaPorNome(String nome) throws SQLException {
-        String query = "select * from usuarios where nome_usuario = ?";
+    public ArrayList<Agendamento> selecionaPorUsuario(int idUsuario) throws SQLException {
+        String query = "select * from agendamentos where id_usuario = " + idUsuario;
         
         PreparedStatement prep = conn.prepareStatement(query);
-        
-        prep.setString(1, nome);
-        
+                
         ResultSet res = prep.executeQuery();
+                
+        ArrayList list = new ArrayList();
         
-        Usuario u = new Usuario();
-        
-        if( res.next() ) {
-            u.setIdUsuario(res.getInt("id_usuario"));
-            u.setNomeUsuario(res.getString("nome_usuario"));
-            u.setTelefoneUsuario(res.getString("telefone_usuario"));
-            u.setSenhaUsuario(res.getString("senha_usuario"));
+        while( res.next() ) {
+            Agendamento a = new Agendamento();
+            
+            a.setIdAgendamento(res.getInt("id_agendamento"));
+            a.setDataAgendamento(res.getDate("data_agendamento"));
+            a.setDescAgendamento(res.getString("desc_agendamento"));
+            
+            list.add(a);
         }
         
         prep.close();
-        return u;
+        return list;
     }
     
     public Usuario selecionaPorId(int id) throws SQLException {
@@ -116,9 +118,9 @@ public class UsuarioDAO {
         prep.close();
     }
      
-    public void apagaUsuario(int id) throws SQLException {
-        String query = "delete from usuarios "
-                     + "where id_usuario = " + id ;
+    public void apagaAgendamento(int id) throws SQLException {
+        String query = "delete from agendamentos "
+                     + "where id_agendamento = " + id ;
         
         PreparedStatement prep = conn.prepareStatement(query);
         

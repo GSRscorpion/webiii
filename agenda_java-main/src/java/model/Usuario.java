@@ -18,6 +18,15 @@ public class Usuario {
         this.senhaUsuario = senhaUsuario;
     }
 
+    public Usuario(int idUsuario, String nomeUsuario, String telefoneUsuario, String senhaUsuario) {
+        this.idUsuario = idUsuario;
+        this.nomeUsuario = nomeUsuario;
+        this.telefoneUsuario = telefoneUsuario;
+        this.senhaUsuario = senhaUsuario;
+    }
+
+    
+
     public int getIdUsuario() {
         return idUsuario;
     }
